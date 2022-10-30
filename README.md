@@ -57,22 +57,42 @@ The exported schema script is run through the SQL system to create the tables. A
 
 ### Images
 <p align = "center">
-![The database illustration](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/crowdfunding_db_relations.png)
+![The database illustration](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/crowdfunding_db_relationships.png)
+
 **Figure 1:** The ERD for the Crowdfunding Database
 
 ![The category table](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/category.png)
+
 **Figure 2:** The category table
 
 ![The subcategory table](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/subcategory.png)
+
 **Figure 3:** The subcategory table
 
 ![The category table](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/contacts.png)
+
 **Figure 4:** The contacts table
 
 ![The category table](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/campaign.png)
+
 **Figure 5:** The campaign table
 
 ![The category table](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/backers.png)
+
 **Figure 6:** The backers table
+</p>
 
 ## Analysis
+The analyses conducted on the resulting crowdfunding database are stored as queries in the `crowdfunding_SQL_Analysis.sql` script. The first two queries make a quick check of the database by getting the number of backers for each live crowdfunding project (by `cf_id`) sorted in descending order. This is done in two different ways: The first selects directly from the `campaign` table, and the second aggregates from the `backers` table.
+
+![The count of backers for live projects](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/backer_counts.png)
+
+The remaining queries come at the request of the client. The first request is to get the full name and email of the contacts for the live projects and the remaining goal amount of those projects. The results are written into a table and exported.
+
+- Export 8: email_contacts_remaining_goal_amount.csv
+![Export 8](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/contacts_rem_goal.png)
+
+The other request is to get the email and full name of the backers for the live projects, the ID number of the backed project, the company name, the description of the project, the end date, and the remaining amount of the goal. The results are written into a table and exported.
+
+- Export 9: email_backers_remaining_goal_amount.csv
+![Export 9](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/backers_rem_goal.png)
