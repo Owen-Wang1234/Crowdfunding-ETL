@@ -56,7 +56,7 @@ With the exported CSV files ready, the Entity Relationship Diagram (ERD) is draw
 The exported schema script is run through the SQL system to create the tables. All the data are imported from the CSV files to their respective tables. A quick verification check makes sure the data are all imported properly.
 
 ### Images
-<p align = "center">
+
 ![The database illustration](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/crowdfunding_db_relationships.png)
 
 **Figure 1:** The ERD for the Crowdfunding Database
@@ -80,7 +80,6 @@ The exported schema script is run through the SQL system to create the tables. A
 ![The category table](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/backers.png)
 
 **Figure 6:** The backers table
-</p>
 
 ## Analysis
 The analyses conducted on the resulting crowdfunding database are stored as queries in the `crowdfunding_SQL_Analysis.sql` script. The first two queries make a quick check of the database by getting the number of backers for each live crowdfunding project (by `cf_id`) sorted in descending order. This is done in two different ways: The first selects directly from the `campaign` table, and the second aggregates from the `backers` table.
@@ -92,7 +91,7 @@ The remaining queries come at the request of the client. The first request is to
 - Export 8: email_contacts_remaining_goal_amount.csv
 ![Export 8](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/contacts_rem_goal.png)
 
-The other request is to get the email and full name of the backers for the live projects, the ID number of the backed project, the company name, the description of the project, the end date, and the remaining amount of the goal. The results are written into a table and exported.
+The other request is to get the email and full name of the backers for the live projects, the ID number of the backed project, the company name, the description of the project, the end date, and the remaining amount of the goal. The results are sorted by email in descending order, written into a table, and exported.
 
 - Export 9: email_backers_remaining_goal_amount.csv
 ![Export 9](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/backers_rem_goal.png)
