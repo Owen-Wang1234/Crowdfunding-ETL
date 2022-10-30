@@ -1,1 +1,58 @@
 # Crowdfunding-ETL
+
+## Project Overview
+A client has requested an analysis of the collected crowdfunding data. The main crowdfunding data is stored in an Excel spreadsheet file with two sheets, and the backers information data is stored in a CSV file; all the data needs to be extracted and cleaned before loading into a SQL database for analysis.
+
+## Resources
+### Data Sources:
+- crowdfunding.xlsx
+- backer_info.csv
+
+### Software:
+- PythonData Environment:
+
+	1. Python 3.7.13
+	2. Jupyter Notebook 6.4.8
+	3. Pandas 1.3.5
+	4. Numpy 1.21.5
+
+- Python 3 Environment:
+
+	1. Python 3.9.13
+	2. Jupyter Notebook 6.4.12
+	3. Pandas 1.4.4
+	4. Numpy 1.21.5
+
+- Database Analysis:
+
+	1. pgAdmin 4 6.12
+	2. PostgreSQL14.5
+
+## Data Processing
+### Extraction and Transformation
+The data files are first imported into DataFrames in Python and checked for faulty data. The crowdfunding data gets the `category & sub-category` column split so that the categories and subcategories can be extracted to form their own DataFrames with their assigned IDs to be exported into CSV files.
+
+- Export 1: categories.csv
+- Export 2: subcategories.csv
+
+The contact info DataFrame and the backers info DataFrame are set up by extracting the necessary information from the long lines of strings. This is done either by iteratively converting the line in each row into a dictionary and then iterating through the dictionary to extract the keys and values with list comprehension, or by running through the lines using regular expressions.
+
+### Transformation
+When working on the crowdfunding DataFrame, a few columns get renamed and some columns get converted to a different data type. The previously extracted DataFrames for the category and subcategory are merged back in, and some unnecessary columns get dropped. The `contact_id` is extracted from the contact information DataFrame, added to the crowdfunding DataFrame, and converted into an integer data type. Then the columns get reordered before exporting into a CSV file.
+
+- Export 3: campaign.csv
+
+The contact info DataFrame and backers info DataFrame have the name column split into first name and last name with the name column dropped afterwards. The columns are then reordered before exporting into CSV files.
+
+- Export 4: contacts.csv
+- Export 5: backers.csv
+
+### Loading
+With the exported CSV files ready, the Entity Relationship Diagram (ERD) is drawn up to illustrate the tables, their columns, and how they relate to each other. The diagram and schema are exported for reference and future use.
+
+- Export 6: crowdfunding_db_relationships.png
+- Export 7: crowdfunding_db_schema.sql
+
+The exported schema script is run through the SQL system to create the tables. All the data are imported from the CSV files to their respective tables. A quick verification check makes sure the data are all imported properly.
+
+## Analysis
