@@ -55,4 +55,24 @@ With the exported CSV files ready, the Entity Relationship Diagram (ERD) is draw
 
 The exported schema script is run through the SQL system to create the tables. All the data are imported from the CSV files to their respective tables. A quick verification check makes sure the data are all imported properly.
 
+### Images
+<p align = "center">
+![The database illustration](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/crowdfunding_db_relations.png)
+**Figure 1:** The ERD for the Crowdfunding Database
+
+![The category table](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/category.png)
+**Figure 2:** The category table
+
+![The subcategory table](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/subcategory.png)
+**Figure 3:** The subcategory table
+
+![The category table](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/contacts.png)
+**Figure 4:** The contacts table
+
+![The category table](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/campaign.png)
+**Figure 5:** The campaign table
+
+![The category table](https://github.com/Owen-Wang1234/Crowdfunding-ETL/blob/main/Screenshots/backers.png)
+**Figure 6:** The backers table
+
 ## Analysis
